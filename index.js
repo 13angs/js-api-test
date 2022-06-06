@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { NotificationService } from './api/api';
-import randomItems from './api/randomItems';
+import arrayFilter from './api/arrayFilter';
 
 const service = new NotificationService();
 
@@ -9,4 +9,8 @@ async function fetchData() {
   console.log(res.data);
 }
 
-console.log(randomItems());
+const arrF = arrayFilter();
+arrF.slice(0, 3).map((f) => {
+  console.log(f.name);
+  return f;
+});
